@@ -19,10 +19,11 @@ namespace DatatableToCsv
             }
             foreach (DataRow row in table.Rows)
             {
+                test += '\n';
                 for (int i = 0; i < table.Columns.Count; i++)
                 {
                     if(!string.IsNullOrEmpty(row.ToString()))
-                        test += string.Concat(row[i],'\n');
+                        test += string.Concat(row[i],',');
                 }
             }
             return test;
